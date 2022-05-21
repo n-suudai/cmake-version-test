@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  linux:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -17,6 +17,23 @@ jobs:
         run: |
           sudo apt list
           
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Check CMake version
+        run: |
+          cmake --version
+          
+      - name: CMake
+        run: |
+          cmake .
+          
+  windows:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [windows-latest, windows-2022, windows-2019]
+    steps:          
       - name: Checkout
         uses: actions/checkout@v3
 
