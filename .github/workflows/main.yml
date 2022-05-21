@@ -13,10 +13,10 @@ jobs:
       matrix:
         os: [ubuntu-latest, ubuntu-20.04]
     steps:
-      - name: Xvfb
-        run: |
-          sudo apt-get install xvfb
-          xvfb-run x.org_application_binary
+#       - name: Xvfb
+#         run: |
+#           sudo apt-get install xvfb
+#           xvfb-run x.org_application_binary
     
       - name: Check apt installed
         run: |
@@ -31,7 +31,7 @@ jobs:
           
       - name: CMake
         run: |
-          cmake .
+          cmake . -DCMAKE_CXX_STANDARD=20
           
   windows:
     runs-on: ${{ matrix.os }}
@@ -48,4 +48,4 @@ jobs:
           
       - name: CMake
         run: |
-          cmake .
+          cmake . -DCMAKE_CXX_STANDARD=20
