@@ -15,6 +15,7 @@ jobs:
     steps:
       - name: Xvfb
         run: |
+          sudo apt-get install xvfb
           xvfb-run x.org_application_binary
     
       - name: Check apt installed
