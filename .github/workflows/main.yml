@@ -13,6 +13,10 @@ jobs:
       matrix:
         os: [ubuntu-latest, ubuntu-20.04]
     steps:
+      - name: Xvfb
+        run: |
+          xvfb-run x.org_application_binary
+    
       - name: Check apt installed
         run: |
           sudo apt list
