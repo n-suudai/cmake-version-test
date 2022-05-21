@@ -13,6 +13,10 @@ jobs:
       matrix:
         os: [ubuntu-latest, ubuntu-20.04]
     steps:
+      - name: Check apt installed
+        run: |
+          sudo apt list
+          
       - name: Checkout
         uses: actions/checkout@v3
 
