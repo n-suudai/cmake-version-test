@@ -49,3 +49,26 @@ jobs:
       - name: CMake
         run: |
           cmake . -DCMAKE_CXX_STANDARD=20
+          
+  mac:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [macOS-latest]
+    steps:          
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Check CMake version
+        run: |
+          cmake --version
+          
+      - name: CMake
+        run: |
+          cmake . -DCMAKE_CXX_STANDARD=20
+          
+      - name: Check Tools
+        run: |
+          echo $ANDROID_SDK_ROOT
+          echo $ANDROID_NDK_ROOT
+          
