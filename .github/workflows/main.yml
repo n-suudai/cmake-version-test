@@ -56,20 +56,20 @@ jobs:
       matrix:
         os: [macOS-latest]
     steps:          
-      - name: Checkout
-        uses: actions/checkout@v3
+#       - name: Checkout
+#         uses: actions/checkout@v3
 
-      - name: Check CMake version
-        run: |
-          cmake --version
+#       - name: Check CMake version
+#         run: |
+#           cmake --version
           
-      - name: CMake
-        run: |
-          cmake . -DCMAKE_CXX_STANDARD=20
+#       - name: CMake
+#         run: |
+#           cmake . -DCMAKE_CXX_STANDARD=20
           
       - name: Check Tools
         run: |
-          java_home --V
+          /usr/libexec/java_home --V
           echo $ANDROID_SDK_ROOT
           echo $ANDROID_NDK_ROOT
           
