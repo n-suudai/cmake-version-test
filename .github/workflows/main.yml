@@ -7,48 +7,48 @@ on:
   workflow_dispatch:
 
 jobs:
-  linux:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ubuntu-latest, ubuntu-20.04]
-    steps:
-#       - name: Xvfb
-#         run: |
-#           sudo apt-get install xvfb
-#           xvfb-run x.org_application_binary
+#   linux:
+#     runs-on: ${{ matrix.os }}
+#     strategy:
+#       matrix:
+#         os: [ubuntu-latest, ubuntu-20.04]
+#     steps:
+# #       - name: Xvfb
+# #         run: |
+# #           sudo apt-get install xvfb
+# #           xvfb-run x.org_application_binary
     
-      - name: Check apt installed
-        run: |
-          sudo apt list
+#       - name: Check apt installed
+#         run: |
+#           sudo apt list
           
-      - name: Checkout
-        uses: actions/checkout@v3
+#       - name: Checkout
+#         uses: actions/checkout@v3
 
-      - name: Check CMake version
-        run: |
-          cmake --version
+#       - name: Check CMake version
+#         run: |
+#           cmake --version
           
-      - name: CMake
-        run: |
-          cmake . -DCMAKE_CXX_STANDARD=20
+#       - name: CMake
+#         run: |
+#           cmake . -DCMAKE_CXX_STANDARD=20
           
-  windows:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [windows-latest, windows-2022, windows-2019]
-    steps:          
-      - name: Checkout
-        uses: actions/checkout@v3
+#   windows:
+#     runs-on: ${{ matrix.os }}
+#     strategy:
+#       matrix:
+#         os: [windows-latest, windows-2022, windows-2019]
+#     steps:          
+#       - name: Checkout
+#         uses: actions/checkout@v3
 
-      - name: Check CMake version
-        run: |
-          cmake --version
+#       - name: Check CMake version
+#         run: |
+#           cmake --version
           
-      - name: CMake
-        run: |
-          cmake . -DCMAKE_CXX_STANDARD=20
+#       - name: CMake
+#         run: |
+#           cmake . -DCMAKE_CXX_STANDARD=20
           
   mac:
     runs-on: ${{ matrix.os }}
@@ -69,6 +69,7 @@ jobs:
           
       - name: Check Tools
         run: |
+          java_home --V
           echo $ANDROID_SDK_ROOT
           echo $ANDROID_NDK_ROOT
           
