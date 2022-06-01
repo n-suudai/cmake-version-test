@@ -69,6 +69,7 @@ jobs:
           
       - name: Check Tools
         run: |
+          ninja --version
           /usr/libexec/java_home -V
           echo JAVA_HOME=$JAVA_HOME
           echo ANDROID_SDK_ROOT=$ANDROID_SDK_ROOT
