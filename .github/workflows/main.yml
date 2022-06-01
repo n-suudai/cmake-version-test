@@ -69,7 +69,7 @@ jobs:
           
       - name: Check Tools
         run: |
-          brew install ninja-build
+          brew install ninja
           ninja --version
           /usr/libexec/java_home -V
           echo JAVA_HOME=$JAVA_HOME
