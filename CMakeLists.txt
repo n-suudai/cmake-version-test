@@ -9,3 +9,12 @@ endif()
 message(":::::OK:::::")
 
 message(":::::CMAKE_CXX_STANDARD=${CMAKE_CXX_STANDARD}:::::")
+
+enable_testing()
+find_package(GTest REQUIRED)
+
+if(GTest_FOUND)
+    message(":::::GTest found:::::")
+else()
+    message(FATAL_ERROR "GTest not found")
+endif()
