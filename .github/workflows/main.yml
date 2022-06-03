@@ -13,6 +13,10 @@ jobs:
       matrix:
         os: [ubuntu-latest, ubuntu-20.04]
     steps:          
+      - name: Install
+        run: |
+          sudo apt-get install googletest
+          
       - name: Checkout
         uses: actions/checkout@v3
 
